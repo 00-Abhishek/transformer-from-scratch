@@ -165,7 +165,7 @@ See `References/bibliography.md` for full list.
 
 ## 🙏 Acknowledgements
 
-- **Dr. Shikha Singh** — guidance and supervision throughout the LLM course
+- **Dr. Shikha Singh** — guidance and supervision throughouts
 - **Vaswani et al. (2017)** — foundational *"Attention Is All You Need"* paper
 - **Andrej Karpathy** — from-scratch Transformer implementation inspiration
 - Open-source community — PyTorch, Hugging Face, NumPy
