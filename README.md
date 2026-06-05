@@ -302,7 +302,6 @@ python encoder_decoder.py
 - **Andrej Karpathy** — educational philosophy that inspired the pure-Python implementation
 - Open-source community — PyTorch, Hugging Face, NumPy
 
-</div>
 ---
 
 <div align="center">
