@@ -10,7 +10,7 @@
 [![License](https://img.shields.io/badge/License-Educational-8A2BE2?style=for-the-badge)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/Ayush-2703/transformer-from-scratch?style=for-the-badge&color=FFD700)](https://github.com/Ayush-2703/transformer-from-scratch/stargazers)
 
-
+<br/>
 ---
 
 ## 🧭 The Story This Repo Tells
