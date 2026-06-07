@@ -37,8 +37,7 @@ Each module in this repo is a chapter in that story — with the theory explaine
 ---
 
 ## 📂 Repository Structure
-<div align="left">
----
+```
 transformer-from-scratch/
 │
 ├── 📁 Encoder Transformer/        ← BERT-style · bidirectional · understanding tasks
@@ -56,11 +55,11 @@ transformer-from-scratch/
     ├── Theory & Math              
     ├── PyTorch Implementation     ← FullDecoderLayer (cross-attn) → EncoderDecoder
     └── Code Walkthrough               
-
+```
 ---
 
 ## 🏗️ Architecture Deep Dive
-<div align="center">
+
 ### Module 1 — Encoder Transformer
 *For tasks that require understanding: classification, NER, semantic search*
 
