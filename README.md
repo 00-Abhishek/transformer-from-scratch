@@ -10,6 +10,8 @@
 [![License](https://img.shields.io/badge/License-Educational-8A2BE2?style=for-the-badge)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/Ayush-2703/transformer-from-scratch?style=for-the-badge&color=FFD700)](https://github.com/Ayush-2703/transformer-from-scratch/stargazers)
 
+</div>
+
 <br/>
 
 ---
@@ -18,6 +20,8 @@
 
 Every modern LLM — GPT-4, Claude, Gemini — runs on one architecture. But the Transformer didn't appear from nowhere.
 This repo walks the full intellectual journey:
+
+<div align="center">
 
 ```
   1990                    1997                    2017
@@ -32,11 +36,16 @@ This repo walks the full intellectual journey:
                           output)
 ```
 
+</div>
+
 Each module in this repo is a chapter in that story — with the theory explained, the math derived, and the code written from scratch.
 
 ---
 
 ## 📂 Repository Structure
+
+<div align="center">
+
 ```
 transformer-from-scratch/
 │
@@ -56,12 +65,17 @@ transformer-from-scratch/
     ├── PyTorch Implementation     ← FullDecoderLayer (cross-attn) → EncoderDecoder
     └── Code Walkthrough               
 ```
+
+</div>
+
 ---
 
 ## 🏗️ Architecture Deep Dive
 
 ### Module 1 — Encoder Transformer
 *For tasks that require understanding: classification, NER, semantic search*
+
+<div align="center">
 
 ```
 Input Tokens
@@ -73,7 +87,7 @@ Input Tokens
     │  │                                            │
     │  │  ┌──────────────────────────────────┐      │
     │  │  │   Multi-Head Self-Attention      │      │
-    │  │  │   Q=K=V=x  |  h=8  |  d_k=64     │      │
+    │  │  │   Q=K=V=x  |  h=8  |  d_k=64    │      │
     │  │  └──────────────────────────────────┘      │
     │  │          │  Add & LayerNorm                │
     │  │  ┌──────────────────────────────────┐      │
@@ -86,10 +100,14 @@ Input Tokens
 Contextual Representations  (B, seq_len, 512)
 ```
 
+</div>
+
 ---
 
 ### Module 2 — Decoder Transformer (GPT-style)
 *For generation: text completion, chat, code synthesis*
+
+<div align="center">
 
 ```
 Token IDs  +  Position IDs
@@ -119,6 +137,8 @@ Token IDs  +  Position IDs
         Next Token  →  Repeat
 ```
 
+</div>
+
 > Also includes a **pure Python implementation** — no PyTorch, no NumPy. Just floats, lists, and calculus.
 > The same architecture. 100 lines. Everything visible.
 
@@ -126,6 +146,8 @@ Token IDs  +  Position IDs
 
 ### Module 3 — Encoder-Decoder Transformer
 *For seq2seq: translation, summarisation, data-to-text*
+
+<div align="center">
 
 ```
 Source Sequence                  Target Sequence (teacher-forced)
@@ -135,7 +157,7 @@ Source Sequence                  Target Sequence (teacher-forced)
  (bidirectional)                    (causal, 3 sub-layers)
       │                                   │
       │  encoder_memory         ┌─────────┴───────────┐
-      └─────────────────────────▶  Cross-Attention   │
+      └─────────────────────────▶  Cross-Attention    │
                                  │  Q ← decoder       │
                                  │  K,V ← enc memory  │
                                  │  no causal mask    │
@@ -146,6 +168,8 @@ Source Sequence                  Target Sequence (teacher-forced)
                                    Token Probabilities
 ```
 
+</div>
+
 **The key insight:** encoder runs *once*, decoder consults it at *every generation step*.
 This is why translation is not just a decoder task.
 
@@ -154,35 +178,64 @@ This is why translation is not just a decoder task.
 ## 📐 Core Mathematics
 
 #### Scaled Dot-Product Attention
+
+<div align="center">
+
 ```
 Attention(Q, K, V) = softmax( QKᵀ / √d_k ) · V
 ```
+
+</div>
+
 > Scaling by `√d_k` prevents softmax saturation when `d_k` is large
 
 #### Multi-Head Attention
+
+<div align="center">
+
 ```
 MultiHead(Q,K,V) = Concat(head₁, ..., headₕ) · Wᴼ
       head_i     = Attention(Q·Wᵢᴼ, K·Wᵢᴷ, V·Wᵢᵛ)
 ```
+
+</div>
+
 > h=8 heads each see a different 64-dim projection — different aspects of meaning
 
 #### Sinusoidal Positional Encoding
+
+<div align="center">
+
 ```
 PE(pos, 2i)   = sin( pos / 10000^(2i / d_model) )
 PE(pos, 2i+1) = cos( pos / 10000^(2i / d_model) )
 ```
+
+</div>
+
 > Deterministic, not learned — generalises to unseen sequence lengths
 
 #### Feed-Forward Network
+
+<div align="center">
+
 ```
 FFN(x) = max(0, x·W₁ + b₁) · W₂ + b₂
          d_model=512 → d_ff=2048 → d_model=512
 ```
 
+</div>
+
 #### Warmup Learning Rate Schedule
+
+<div align="center">
+
 ```
 lr = d_model⁻⁰·⁵ · min( step⁻⁰·⁵,  step · warmup_steps⁻¹·⁵ )
 ```
+
+</div>
+
 > Increases linearly for 4000 steps, then decays — stabilises early training
 
 ---
@@ -290,9 +343,6 @@ python encoder_decoder.py
 | [T5](https://arxiv.org/abs/1910.10683) | Raffel et al. | 2020 |
 
 ---
-
-
-<div align="left">
 
 ## 🙏 Acknowledgements
 
