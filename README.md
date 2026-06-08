@@ -44,26 +44,24 @@ Each module in this repo is a chapter in that story — with the theory explaine
 
 ## 📂 Repository Structure
 
-<div align="center">
-
 ```
 transformer-from-scratch/
 │
-├── 📁 Encoder Transformer/        ← BERT-style · bidirectional · understanding tasks
-│   ├── Theory & Math              
-│   ├── PyTorch Implementation     ← ScaledDotProductAttention → MultiHeadAttention
-│   └── Code Walkthrough               → PositionwiseFFN → EncoderLayer → Encoder
+├── 📁 Encoder Transformer/           ← BERT-style · bidirectional · understanding tasks
+│   ├── Theory & Math
+│   ├── PyTorch Implementation        ← ScaledDotProductAttention → MultiHeadAttention
+│   └── Code Walkthrough              → PositionwiseFFN → EncoderLayer → Encoder
 │
-├── 📁 Decoder Transformer/        ← GPT-style · causal · generation tasks  
-│   ├── Theory & Math              
-│   ├── PyTorch Implementation     ← Causal mask → DecoderLayer → GPTDecoder
-│   ├── Pure Python Implementation ← Zero dependencies · built on basic math only
-│   └── Code Walkthrough               
+├── 📁 Decoder Transformer/           ← GPT-style · causal · generation tasks
+│   ├── Theory & Math
+│   ├── PyTorch Implementation        ← Causal mask → DecoderLayer → GPTDecoder
+│   ├── Pure Python Implementation    ← Zero dependencies · built on basic math only
+│   └── Code Walkthrough
 │
-└── 📁 Encoder-Decoder Transformer/  ← T5/BART-style · seq2seq · translation tasks
-    ├── Theory & Math              
-    ├── PyTorch Implementation     ← FullDecoderLayer (cross-attn) → EncoderDecoder
-    └── Code Walkthrough               
+└── 📁 Encoder-Decoder Transformer/   ← T5/BART-style · seq2seq · translation tasks
+    ├── Theory & Math
+    ├── PyTorch Implementation        ← FullDecoderLayer (cross-attn) → EncoderDecoder
+    └── Code Walkthrough
 ```
 
 </div>
