@@ -17,31 +17,31 @@ ASCII and text diagrams for every major Transformer component.
 │       │                 │       │                                  │
 │  [Embedding + PE]       │  [Embedding + PE]                        │
 │       │                 │       │                                  │
-│  ┌────▼────────────┐    │  ┌────▼──────────────────────────────┐  │
-│  │ Multi-Head      │    │  │ Masked Multi-Head Self-Attention   │  │
-│  │ Self-Attention  │    │  │ (causal mask — can't see future)   │  │
-│  └────┬────────────┘    │  └────┬──────────────────────────────┘  │
+│  ┌────▼────────────┐    │  ┌────▼──────────────────────────────┐   │
+│  │ Multi-Head      │    │  │ Masked Multi-Head Self-Attention  │   │
+│  │ Self-Attention  │    │  │ (causal mask — can't see future)  │   │
+│  └────┬────────────┘    │  └────┬──────────────────────────────┘   │
 │       │                 │       │                                  │
-│  [Add & Norm]           │  [Add & Norm]                           │
+│  [Add & Norm]           │  [Add & Norm]                            │
 │       │                 │       │                                  │
-│  ┌────▼────────────┐    │  ┌────▼──────────────────────────────┐  │
-│  │ Feed-Forward    │    │  │ Cross-Attention                    │  │
-│  │ Network         │    │  │ Q=decoder, K=V=encoder memory      │  │
-│  └────┬────────────┘    │  └────┬──────────────────────────────┘  │
+│  ┌────▼────────────┐    │  ┌────▼──────────────────────────────┐   │
+│  │ Feed-Forward    │    │  │ Cross-Attention                   │   │
+│  │ Network         │    │  │ Q=decoder, K=V=encoder memory     │   │
+│  └────┬────────────┘    │  └────┬──────────────────────────────┘   │
 │       │                 │       │                                  │
-│  [Add & Norm]           │  [Add & Norm]                           │
+│  [Add & Norm]           │  [Add & Norm]                            │
 │       │                 │       │                                  │
-│  × N layers             │  ┌────▼──────────────────────────────┐  │
-│       │                 │  │ Feed-Forward Network               │  │
-│       │                 │  └────┬──────────────────────────────┘  │
+│  × N layers             │  ┌────▼──────────────────────────────┐   │
+│       │                 │  │ Feed-Forward Network              │   │
+│       │                 │  └────┬──────────────────────────────┘   │
 │       │                 │       │                                  │
-│       │                 │  [Add & Norm]                           │
+│       │                 │  [Add & Norm]                            │
 │       │                 │       │                                  │
-│       │                 │  × N layers                             │
+│       │                 │  × N layers                              │
 │       │                 │       │                                  │
-│       ├─────────────────►  [Linear → Vocab Size]                  │
+│       ├─────────────────►  [Linear → Vocab Size]                   │
 │  encoder memory         │       │                                  │
-│                         │  [Softmax]                              │
+│                         │  [Softmax]                               │
 │                         │       │                                  │
 │                         │  Output probabilities                    │
 └─────────────────────────┴──────────────────────────────────────────┘
@@ -52,9 +52,9 @@ ASCII and text diagrams for every major Transformer component.
 ## 2. Scaled Dot-Product Attention
 
 ```
-         Q          K          V
-         │          │          │
-         ▼          ▼          │
+         Q          K         V
+         │          │         │
+         ▼          ▼         │
        MatMul ◄────►          │
          │                    │
          ▼                    │
