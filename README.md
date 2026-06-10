@@ -42,9 +42,72 @@ Each module in this repo is a chapter in that story — with the theory explaine
 
 ---
 
-## 📂 Repository Structure
+## 📁 Repository Structure
 
-<img width="1440" height="2324" alt="image" src="https://github.com/user-attachments/assets/c5ba4474-52ba-4e30-9847-56067afac720" />
+```
+transformer-from-scratch/
+│
+├── 📂 Applications/
+│   └── 📄 Applications.md
+│
+├── 📂 Architecture Diagrams/
+│   └── 📄 Diagrams.md
+│
+├── 📂 Comparison Tables/
+│   └── 📄 all_comparisons.md
+│
+├── 📂 Decoder_Transformer/
+│   ├── 🐍 Dependency-free implementation of a Transformer Decoder.py
+│   ├── 🐍 GPT-style Decoder.py
+│   ├── 📄 decoder_explained.md
+│   └── 📄 theory.md
+│
+├── 📂 Encoder_Decoder_Transformer/
+│   ├── 📄 encoder_decoder_explained.md
+│   ├── 🐍 encoder_decoder_transformer.py
+│   ├── 🐍 learning_rate_schedule_with_warmup.py
+│   └── 📄 theory.md
+│
+├── 📂 Encoder_Tranformer/
+│   ├── 🐍 encoder.py
+│   ├── 📄 encoder_explained.md
+│   └── 📄 theory.md
+│
+├── 📂 Foundations/
+│   ├── 📂 Attention_Mechanism/
+│   │   ├── 🐍 attention_code.py
+│   │   └── 📄 Theory.md
+│   ├── 📂 Input_Embedding/
+│   │   ├── 🐍 code.py
+│   │   └── 📄 theory.md
+│   ├── 📂 LSTM/
+│   │   ├── 🐍 code.py
+│   │   └── 📄 theory.md
+│   ├── 📂 Positional Encoding/
+│   │   ├── 🐍 code.py
+│   │   └── 📄 theory.md
+│   └── 📂 RNN/
+│       └── 📄 theory.md
+│
+├── 📂 Glossary/
+│   └── 📄 glossary.md
+│
+├── 📂 Limitation/
+│   └── 📄 limitations.md
+│
+├── 📂 References/
+│   └── 📄 References.md
+│
+├── 📂 Training/
+│   ├── 🐍 Code.py
+│   ├── 📄 Code_Explanation.md
+│   └── 📄 Theory.md
+│
+├── 🔒 .gitignore
+├── 📄 QUICKSTART.md
+├── 📄 README.md
+└── 📄 requirements.txt
+```
 
 </div>
 
