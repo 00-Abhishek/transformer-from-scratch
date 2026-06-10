@@ -102,8 +102,8 @@ Dividing by length^α normalizes for length. α=0 → no penalty (favor length).
 
 | Mistake | Effect | Fix |
 |---------|--------|-----|
-| Using causal mask in cross-attention | Decoder can't see future source tokens | No mask in cross-attn |
-| Forgetting src_mask in cross-attention | Attends to [PAD] source tokens | Pass src_mask to cross_attn |
+| Using causal mask in cross-attention | Decoder can't see future source tokens | No mask in cross-attention |
+| Forgetting src_mask in cross-attention | Attends to [PAD] source tokens | Pass src_mask to cross_attention |
 | No teacher forcing shift | Position i predicts itself, not next | `tgt_in = tgt[:, :-1]`, `tgt_out = tgt[:, 1:]` |
 | Recomputing encoder per decode step | Very slow inference | Call `encode()` once, cache memory |
 | Beam search without length penalty | Prefers short translations | Apply `/ len^α` when scoring |
