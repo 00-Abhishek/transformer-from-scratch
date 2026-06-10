@@ -35,7 +35,7 @@ SOURCE SEQUENCE
 │  [Multi-Head Self-Attention]           │
 │  [Add & Norm]                          │
 │  [FFN]                                 │
-│  [Add & Norm]        × N              │
+│  [Add & Norm]        × N               │
 └────────────────────────────────────────┘
       │
       │ encoder memory (B, src_len, d_model)
@@ -52,11 +52,11 @@ TARGET SEQUENCE            │ (fixed; reused by every decoder layer)
 │  [Masked Multi-Head Self-Attention]                 │
 │  [Add & Norm]                                       │
 │                                                     │
-│  [Cross-Attention: Q=decoder, K=V=encoder memory]  │
+│  [Cross-Attention: Q=decoder, K=V=encoder memory]   │
 │  [Add & Norm]                                       │
 │                                                     │
 │  [FFN]                                              │
-│  [Add & Norm]                   × N                │
+│  [Add & Norm]                   × N                 │
 └─────────────────────────────────────────────────────┘
       │
       ▼
